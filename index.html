@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>童宁號 V2.0</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<!-- NAV -->
+<div class="nav">
+
+    <div class="nav-item" data-state="home">
+        <span>首页</span>
+        <small>Home</small>
+    </div>
+
+    <div class="nav-group">
+        <div class="nav-item">
+            <span>产品</span>
+            <small>Products</small>
+        </div>
+
+        <div class="dropdown">
+            <div class="drop-item" data-state="dining">堂食 / 外卖</div>
+            <div class="drop-item" data-state="cold">冷链</div>
+            <div class="drop-item" data-state="gift">礼盒</div>
+        </div>
+    </div>
+
+    <div class="nav-item" data-state="flagship">
+        <span>旗舰店</span>
+        <small>Flagship</small>
+    </div>
+
+    <div class="nav-item" data-state="about">
+        <span>关于</span>
+        <small>About</small>
+    </div>
+
+</div>
+
+<!-- BACKGROUND -->
+<div class="bg active" data-state="home" style="background-image:url('assets/images/home.png')"></div>
+<div class="bg" data-state="dining" style="background-image:url('assets/images/instant.png')"></div>
+<div class="bg" data-state="cold" style="background-image:url('assets/images/cold-chain.png')"></div>
+<div class="bg" data-state="gift" style="background-image:url('assets/images/gift-box.png')"></div>
+<div class="bg" data-state="flagship" style="background-image:url('assets/images/flagship-store.png')"></div>
+
+<!-- SCENES -->
+<div class="scene" data-state="home">
+    <h1>让浙江味道，走向世界。</h1>
+    <p>Bringing Zhejiang Cuisine to the World</p>
+</div>
+
+<div class="scene" data-state="dining"><h1>堂食 · 外卖</h1></div>
+<div class="scene" data-state="cold"><h1>冷链</h1></div>
+<div class="scene" data-state="gift"><h1>礼盒</h1></div>
+<div class="scene" data-state="flagship">
+    <h1>将店铺开到世界每一个有华人的角落</h1>
+    <p>Bring Zhejiang Cuisine to Global Communities</p>
+</div>
+
+<div class="scene" data-state="about"><h1>About</h1></div>
+
+<script src="js/app.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,196 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#000;
+    color:#fff;
+    font-family:-apple-system,BlinkMacSystemFont,"PingFang SC";
+    overflow:hidden;
+}
+
+/* ================= BACKGROUND ================= */
+
+.bg{
+    position:fixed;
+    inset:0;
+    background-size:cover;
+    background-position:center;
+
+    opacity:0;
+    transition:1.2s ease;
+
+    filter:brightness(0.55) contrast(1.08);
+    z-index:1;
+}
+
+.bg.active{
+    opacity:1;
+}
+
+/* ================= SCENE ================= */
+
+.scene{
+    position:fixed;
+    inset:0;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+
+    opacity:0;
+    transform:translateY(12px);
+
+    transition:1.1s cubic-bezier(0.2,0.8,0.2,1);
+
+    pointer-events:none;
+    z-index:2;
+}
+
+/* active */
+.scene.active{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* ================= 基础字体统一（防止错乱） ================= */
+
+.scene h1{
+    font-size:70px;
+    letter-spacing:-1px;
+    margin:0;
+}
+
+.scene p{
+    font-size:16px;
+    opacity:0.55;
+    margin-top:10px;
+}
+
+/* ================= 黄金分割（只影响 2 个页面） ================= */
+
+.scene[data-state="home"],
+.scene[data-state="flagship"]{
+    justify-content:flex-start;
+    padding-top:61.8vh;
+}
+
+/* ================= 防止视觉“飞走” ================= */
+
+.scene[data-state="home"] h1,
+.scene[data-state="flagship"] h1{
+    transform:translateY(-20px);
+}
+/* ================= NAV (FINAL LIQUID GLASS CAPSULE) ================= */
+
+.nav{
+    position:fixed;
+    top:18px;
+    left:50%;
+    transform:translateX(-50%);
+
+    display:flex;
+    align-items:center;
+    gap:64px;
+
+    padding:14px 26px;
+
+    border-radius:999px;
+
+    background:rgba(255,255,255,0.12);
+    backdrop-filter:blur(52px);
+
+    border:1px solid rgba(255,255,255,0.10);
+
+    z-index:9999;
+}
+
+/* NAV ITEM (FINAL ACTIVE SYSTEM) */
+.nav-item{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+
+    cursor:pointer;
+
+    opacity:0.55;
+    transition:0.25s ease;
+}
+
+.nav-item span{
+    font-size:15px;
+}
+
+.nav-item small{
+    font-size:11px;
+    opacity:0.4;
+}
+
+/* ACTIVE GLOW + PILL EFFECT */
+.nav-item.active{
+    opacity:1;
+    transform:translateY(-1px);
+    position:relative;
+}
+
+.nav-item.active::after{
+    content:"";
+    position:absolute;
+    bottom:-6px;
+    width:18px;
+    height:2px;
+    background:white;
+    border-radius:2px;
+    opacity:0.6;
+}
+
+/* ================= DROPDOWN ================= */
+
+.nav-group{
+    position:relative;
+}
+
+.dropdown{
+    position:absolute;
+    top:54px;
+    left:50%;
+    transform:translateX(-50%);
+
+    display:flex;
+    flex-direction:row;
+
+    gap:22px;
+
+    padding:16px 20px;
+
+    background:rgba(255,255,255,0.14);
+    backdrop-filter:blur(54px);
+
+    border-radius:16px;
+
+    opacity:0;
+    pointer-events:none;
+
+    transition:0.22s ease;
+}
+
+.nav-group.open .dropdown{
+    opacity:1;
+    pointer-events:auto;
+}
+
+.drop-item{
+    font-size:13px;
+    opacity:0.75;
+    transition:0.2s ease;
+}
+
+.drop-item:hover{
+    opacity:1;
+    transform:translateY(-1px);
+}
