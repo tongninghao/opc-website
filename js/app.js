@@ -14,12 +14,7 @@ const group = document.querySelector(".nav-group");
 const flagshipSections = document.querySelectorAll(".flagship-section");
 
 
-
 let open = false;
-
-
-
-
 
 
 
@@ -40,6 +35,12 @@ const flagshipObserver = new IntersectionObserver(
             entry.target.classList.add("active");
 
 
+        }else{
+
+
+            entry.target.classList.remove("active");
+
+
         }
 
 
@@ -57,10 +58,8 @@ const flagshipObserver = new IntersectionObserver(
 
 }
 
+
 );
-
-
-
 
 
 
