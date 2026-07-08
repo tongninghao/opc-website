@@ -2,71 +2,575 @@
 <html lang="zh-CN">
 
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>童宁號 V2.0</title>
+
+<title>童宁號 V3.1</title>
+
 <link rel="stylesheet" href="css/style.css">
+
 </head>
+
 
 <body>
 
-<!-- NAV -->
+
+<!-- ================= NAV ================= -->
+
+
 <div class="nav">
 
+
     <div class="nav-item" data-state="home">
+
         <span>首页</span>
+
         <small>Home</small>
+
     </div>
+
+
 
     <div class="nav-group">
+
+
         <div class="nav-item">
+
             <span>产品</span>
+
             <small>Products</small>
+
         </div>
+
+
 
         <div class="dropdown">
-            <div class="drop-item" data-state="dining">堂食 / 外卖</div>
-            <div class="drop-item" data-state="cold">冷链</div>
-            <div class="drop-item" data-state="gift">礼盒</div>
+
+
+            <div class="drop-item" data-state="dining">
+
+                堂食 / 外卖
+
+            </div>
+
+
+
+            <div class="drop-item" data-state="cold">
+
+                冷链
+
+            </div>
+
+
+
+            <div class="drop-item" data-state="gift">
+
+                礼盒
+
+            </div>
+
+
         </div>
+
+
     </div>
+
+
+
+
 
     <div class="nav-item" data-state="flagship">
+
         <span>旗舰店</span>
+
         <small>Flagship</small>
+
     </div>
+
+
+
+
 
     <div class="nav-item" data-state="about">
+
         <span>关于</span>
+
         <small>About</small>
+
     </div>
 
+
+
 </div>
 
-<!-- BACKGROUND -->
-<div class="bg active" data-state="home" style="background-image:url('assets/images/home.png')"></div>
-<div class="bg" data-state="dining" style="background-image:url('assets/images/instant.png')"></div>
-<div class="bg" data-state="cold" style="background-image:url('assets/images/cold-chain.png')"></div>
-<div class="bg" data-state="gift" style="background-image:url('assets/images/gift-box.png')"></div>
-<div class="bg" data-state="flagship" style="background-image:url('assets/images/flagship-store.png')"></div>
 
-<!-- SCENES -->
+
+
+
+
+
+<!-- ================= BACKGROUND ================= -->
+
+
+<div class="bg active"
+
+data-state="home"
+
+style="background-image:url('assets/images/home.png')">
+
+</div>
+
+
+
+
+
+<div class="bg"
+
+data-state="dining"
+
+style="background-image:url('assets/images/products/instant.png')">
+
+</div>
+
+
+
+
+
+<div class="bg"
+
+data-state="cold"
+
+style="background-image:url('assets/images/products/cold-chain.png')">
+
+</div>
+
+
+
+
+
+<div class="bg"
+
+data-state="gift"
+
+style="background-image:url('assets/images/products/gift-box.png')">
+
+</div>
+
+
+
+
+
+
+<!-- ================= SCENES ================= -->
+
+
 <div class="scene" data-state="home">
-    <h1>让浙江味道，走向世界。</h1>
-    <p>Bringing Zhejiang Cuisine to the World</p>
+
+
+<h1>
+
+让浙江味道，走向世界。
+
+</h1>
+
+
+
+<p>
+
+Bringing Zhejiang Cuisine to the World
+
+</p>
+
+
 </div>
 
-<div class="scene" data-state="dining"><h1>堂食 · 外卖</h1></div>
-<div class="scene" data-state="cold"><h1>冷链</h1></div>
-<div class="scene" data-state="gift"><h1>礼盒</h1></div>
-<div class="scene" data-state="flagship">
-    <h1>将店铺开到世界每一个有华人的角落</h1>
-    <p>Bring Zhejiang Cuisine to Global Communities</p>
+
+
+
+
+
+<div class="scene" data-state="dining">
+
+
+<h1>
+
+堂食 · 外卖
+
+</h1>
+
+
 </div>
 
-<div class="scene" data-state="about"><h1>About</h1></div>
+
+
+
+
+
+<div class="scene" data-state="cold">
+
+
+<h1>
+
+冷链
+
+</h1>
+
+
+</div>
+
+
+
+
+
+
+<div class="scene" data-state="gift">
+
+
+<h1>
+
+礼盒
+
+</h1>
+
+
+</div>
+
+
+
+
+<!-- ================= FLAGSHIP EXPERIENCE ================= -->
+
+
+<div class="scene flagship-scene" data-state="flagship">
+
+
+<div class="flagship-scroll">
+
+
+
+<!-- ================= COVER ================= -->
+
+
+<section class="flagship-section flagship-cover">
+
+
+<img src="assets/images/flagship/flagship-store.png">
+
+
+
+<div class="flagship-content flagship-left">
+
+
+<h1>
+
+一店一世界
+
+</h1>
+
+
+
+<p>
+
+One Store, One World
+
+</p>
+
+
+
+<span>
+
+从浙江味道出发，将传统美食转化为现代品牌空间，连接全球消费者。
+
+</span>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+<!-- ================= SPACE ================= -->
+
+
+<section class="flagship-section">
+
+
+<img src="assets/images/flagship/space.png">
+
+
+
+<div class="flagship-content flagship-right">
+
+
+<h1>
+
+东方美学，重新定义餐饮空间
+
+</h1>
+
+
+
+<p>
+
+Eastern Aesthetics, Modern Experience
+
+</p>
+
+
+
+<span>
+
+以浙江文化为灵感，将东方气质融入现代商业空间，创造独特品牌体验。
+
+</span>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+<!-- ================= KITCHEN ================= -->
+
+
+<section class="flagship-section">
+
+
+<img src="assets/images/flagship/kitchen.png">
+
+
+
+<div class="flagship-content flagship-left">
+
+
+<h1>
+
+标准化工艺，守护每一道味道
+
+</h1>
+
+
+
+<p>
+
+Precision Behind Every Taste
+
+</p>
+
+
+
+<span>
+
+从供应链到制作流程，以数字化体系保证每一家门店稳定呈现。
+
+</span>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+<!-- ================= DINING ================= -->
+
+
+<section class="flagship-section">
+
+
+<img src="assets/images/flagship/dining.png">
+
+
+
+<div class="flagship-content flagship-right">
+
+
+<h1>
+
+不只是用餐，更是一场浙江文化体验
+
+</h1>
+
+
+
+<p>
+
+More Than Dining, A Cultural Experience
+
+</p>
+
+
+
+<span>
+
+让食物成为连接人与城市、传统与未来的文化媒介。
+
+</span>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+<!-- ================= DETAIL ================= -->
+
+
+<section class="flagship-section">
+
+
+<img src="assets/images/flagship/detail.png">
+
+
+
+<div class="flagship-content flagship-left">
+
+
+<h1>
+
+每一个细节，都代表品牌态度
+
+</h1>
+
+
+
+<p>
+
+Details Shape The Brand
+
+</p>
+
+
+
+<span>
+
+从空间、包装到服务体系，建立统一而高级的品牌识别。
+
+</span>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+<!-- ================= VISION ================= -->
+
+
+<section class="flagship-section">
+
+
+<img src="assets/images/flagship/vision.png">
+
+
+
+<div class="flagship-content flagship-center">
+
+
+<h1>
+
+让浙江味道，走向世界
+
+</h1>
+
+
+
+<p>
+
+Bringing Zhejiang Cuisine To The World
+
+</p>
+
+
+
+<span>
+
+通过品牌、供应链与数字化能力，让中国地方美食连接全球市场。
+
+</span>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<!-- ================= ABOUT ================= -->
+
+
+<div class="scene" data-state="about">
+
+
+<h1>
+
+About
+
+</h1>
+
+
+</div>
+
+
+
+
+
 
 <script src="js/app.js"></script>
 
+
+
 </body>
+
 </html>

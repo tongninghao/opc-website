@@ -1,56 +1,292 @@
+/* ================= CORE ELEMENT ================= */
+
+
 const scenes = document.querySelectorAll(".scene");
+
 const backgrounds = document.querySelectorAll(".bg");
-const navItems = document.querySelectorAll("[data-state]");
+
+const navItems = document.querySelectorAll(".nav-item[data-state]");
+
+const dropdownItems = document.querySelectorAll(".drop-item");
+
 const group = document.querySelector(".nav-group");
+
+const flagshipSections = document.querySelectorAll(".flagship-section");
+
+
 
 let open = false;
 
-/* RENDER */
-function render(state){
 
-    scenes.forEach(s=>{
-        s.classList.toggle("active", s.dataset.state === state);
+
+
+
+
+
+/* ================= FLAGSHIP MOTION OBSERVER ================= */
+
+
+const flagshipObserver = new IntersectionObserver(
+
+(entries)=>{
+
+
+    entries.forEach(entry=>{
+
+
+        if(entry.isIntersecting){
+
+
+            entry.target.classList.add("active");
+
+
+        }
+
+
     });
 
-    backgrounds.forEach(b=>{
-        b.classList.toggle("active", b.dataset.state === state);
-    });
 
-    navItems.forEach(n=>{
-        n.classList.toggle("active", n.dataset.state === state);
-    });
+},
+
+
+{
+
+
+    threshold:0.45
+
+
 }
 
-/* NAV */
-navItems.forEach(el=>{
-    el.addEventListener("click",()=>{
-        render(el.dataset.state);
-        open = false;
-        group.classList.remove("open");
+);
+
+
+
+
+
+
+flagshipSections.forEach(section=>{
+
+
+    flagshipObserver.observe(section);
+
+
+});
+
+
+
+
+
+
+
+/* ================= RENDER SYSTEM ================= */
+
+
+function render(state){
+
+
+
+    scenes.forEach(scene=>{
+
+
+        scene.classList.toggle(
+
+            "active",
+
+            scene.dataset.state === state
+
+        );
+
+
     });
-});
 
-/* DROPDOWN */
-document.querySelectorAll(".drop-item").forEach(el=>{
-    el.addEventListener("click",()=>{
-        render(el.dataset.state);
-        open = false;
-        group.classList.remove("open");
+
+
+
+
+    backgrounds.forEach(bg=>{
+
+
+        bg.classList.toggle(
+
+            "active",
+
+            bg.dataset.state === state
+
+        );
+
+
     });
+
+
+
+
+
+    navItems.forEach(nav=>{
+
+
+        nav.classList.toggle(
+
+            "active",
+
+            nav.dataset.state === state
+
+        );
+
+
+    });
+
+
+}
+
+
+
+
+
+
+
+/* ================= NAVIGATION ================= */
+
+
+navItems.forEach(item=>{
+
+
+    item.addEventListener(
+
+        "click",
+
+        ()=>{
+
+
+            render(item.dataset.state);
+
+
+
+            open=false;
+
+
+
+            group.classList.remove("open");
+
+
+        }
+
+    );
+
+
 });
 
-/* TOGGLE */
-group.addEventListener("click",(e)=>{
-    e.stopPropagation();
-    open = !open;
-    group.classList.toggle("open", open);
+
+
+
+
+
+
+/* ================= PRODUCTS ================= */
+
+
+dropdownItems.forEach(item=>{
+
+
+    item.addEventListener(
+
+        "click",
+
+        (event)=>{
+
+
+            event.stopPropagation();
+
+
+
+            render(item.dataset.state);
+
+
+
+            open=false;
+
+
+
+            group.classList.remove("open");
+
+
+        }
+
+    );
+
+
 });
 
-/* OUTSIDE CLOSE */
-document.body.addEventListener("click",()=>{
-    open = false;
-    group.classList.remove("open");
-});
 
-/* INIT */
+
+
+
+
+
+/* ================= DROPDOWN ================= */
+
+
+group.addEventListener(
+
+    "click",
+
+    (event)=>{
+
+
+        event.stopPropagation();
+
+
+
+        open=!open;
+
+
+
+        group.classList.toggle(
+
+            "open",
+
+            open
+
+        );
+
+
+    }
+
+);
+
+
+
+
+
+
+
+/* ================= CLOSE ================= */
+
+
+document.body.addEventListener(
+
+    "click",
+
+    ()=>{
+
+
+        open=false;
+
+
+
+        group.classList.remove("open");
+
+
+    }
+
+);
+
+
+
+
+
+
+
+/* ================= INIT ================= */
+
+
 render("home");
